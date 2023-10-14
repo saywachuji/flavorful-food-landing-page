@@ -19,22 +19,21 @@
 <body>
     
     <header class="App-header">
-    <nav class="navbar fixed-top p-3 navbar-dark bg-dark navbar-expand-lg ">
-    <div class="container-fluid" >
-      <a class="navbar-brand" href="#">A Taste of Ecuador</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active text-white" aria-current="page" href="#home">Home</a>
-          <a class="nav-link text-white" href="#">Recipe</a>
-          <a class="nav-link text-white" href="#">History</a>
-          <a class="nav-link text-white" href="#">Restaurants</a>
+      <nav class="navbar fixed-top text-center p-3 navbar-dark bg-dark navbar-expand-lg">
+        <a class="navbar-brand" href="#">A Taste of Ecuador</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav justify-content-center">
+            <!-- Add the "text-center" class to center the links -->
+            <a class="nav-link active text-white text-center" aria-current="page" href="#home" style="display: inline-block;">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-link text-white text-center" href="#recipe" style="display: inline-block;">Recipe</a>
+            <a class="nav-link text-white text-center" href="#history" style="display: inline-block;">History</a>
+            <a class="nav-link text-white text-center" href="#restaurants" style="display: inline-block;">Restaurants</a>
+          </div>
         </div>
-      </div>
-    </div>
-  </nav>
+      </nav>
     </header>
   
   <section id="home">
@@ -77,10 +76,10 @@
     <div class='title-image recipe-title'><h3 class='text-center'>Recipe</h3></div>
   <div class='recipe-container mt-5 mb-5'>
       <div class="fluid-container text-center">
-        <div class="row">
-          <div class="col mr-3 p-3" >
+        <div class="row d-flex justify-content-center ">
+          <div class="col-lg mr-3 p-3 mt-2" >
             <h4 class="pb-3">Ingredients</h4>
-            <div class="">
+            
               <ul>
                 <li>2 lbs fresh tuna albacore</li>
                 <li>1 lb yuca or cassava</li>
@@ -93,9 +92,9 @@
                 <li>5 cilantro sprigs</li>
                 <li>Salt to taste</li>
               </ul>
-            </div>
+            
           </div>
-          <div class="col mr-3 p-3">
+          <div class="col-lg mr-3 p-3 mt-2">
             <h4 class="pb-3">Instructions</h4>
             <p class="text-left">1. Heat the oil on medium heat to make a refrito with diced onion, tomato, cumin, chili powder and salt.</p>
                 <p class="text-left">2. Add the water and cilantro springs, bring to a boil.</p> 
@@ -109,11 +108,11 @@
                 <p style="font-weight: bold">Notes</p>
                 <p class="text-left">Variations for encebollado can be made using different types of fish or seafood. 
                 <br>You can also additional herbs to the broth, but cilantro is the main one. </p>    
-                <a class="recipe-button"href="https://www.laylita.com/recipes/encebollado-de-pescado-or-tuna-soup/" target="_blank">More info</a>
+                <div class="recipe-btn-container"><a class="recipe-button"href="https://www.laylita.com/recipes/encebollado-de-pescado-or-tuna-soup/" target="_blank">More info</a></div>
             </div> 
     
     
-          <div class="col mr-3 p-3">
+          <div class="col-lg mr-3 p-3 mt-2">
             <h4 class="pb-3">Video</h4>
             <div class="video-container mx-auto ">
                 <iframe src="https://www.youtube.com/embed/AhJpRnQqcVs?si=S4be8_AOL-9qtjcP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -185,6 +184,20 @@
   margin: 0;
   padding: 0;
 }
+
+.navbar-toggler{
+  border-color: #ff0000;
+  border: 3px solid white;
+  z-index: 2;
+  background-color: transparent;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+
 body{
     color: white;
     background-color: #343A40;
@@ -198,6 +211,10 @@ p, li{
     font-weight: 300;
 }
 
+.nav-bar {
+  display: flex;
+  justify-content: center;
+}
 .navbar-brand{
     font-family: 'Fondamento';
 }
@@ -214,9 +231,7 @@ h2{
     height: 100vh;
     position: relative;
     }
-.nav-color{
-    backdrop-filter: blur(10px);
-}
+
 .hero-background {
     background-image: url('https://recetas.ileshop.com.ec/wp-content/uploads/2023/05/encebollado.jpg');
     background-attachment: fixed;
@@ -382,30 +397,36 @@ ul{
     list-style: none;
 }
 
-.col{
+.col-lg{
     
     height: 500px;
     overflow: auto;
-    border: 0.5px solid white;
+    width: 100%;
+    border: 1px solid white;
 }
 
-.recipe-button, .main-button{
+.recipe-btn-container{
+  display: inline-block;
+  margin: 20px;
+}
+.recipe-button{
 background-color: white; 
   color: black; 
   text-decoration: none;
   font-weight: bold;
   padding: 10px 20px; 
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s; 
+  transition: background-color 0.4s, transform 0.4s; 
+
 }
 
 .recipe-button:hover{
-  background-color: greenyellow;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  border: 1px solid white;
   text-decoration: none;
-  color: black;
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
 }
 
 /* RESTAURANTS SECTION -----------------------------------------------------------------*/
