@@ -27,10 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav justify-content-center">
         
-            <a class="nav-link active text-white " aria-current="page" href="#home" style="display: inline-block;">Home<span class="sr-only">(current)</span></a>
-            <a class="nav-link text-white" href="#recipe" style="display: inline-block;">Recipe</a>
-            <a class="nav-link text-white" href="#history" style="display: inline-block;">History</a>
-            <a class="nav-link text-white" href="#restaurants" style="display: inline-block;">Restaurants</a>
+            <a class="nav-link text-light" aria-current="page" href="#home" style="display: inline-block;">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-link text-light" href="#recipe" style="display: inline-block;">Recipe</a>
+            <a class="nav-link text-light" href="#history" style="display: inline-block;">History</a>
+            <a class="nav-link text-light" href="#restaurants" style="display: inline-block;">Restaurants</a>
           </div>
         </div>
       </nav>
@@ -53,16 +53,16 @@
   <section id="history">
     <div class='title-image history-title'><h3 clas='text-center'>A quick history of the Encebollado</h3></div>
     <div class="history-container mt-5">
-     <div class="row mb-5">
+     <div class="row mb-5 his-1">
       <div class="col-md-6 text-left d-flex align-items-center"><p>Encebollado is the national dish of Ecuador, a fish soup that is characterized by a large amount of onions. The dish is made with fresh tuna meat, cassava root, tomatoes, onions, coriander, and various spices. Tomatoes, onions, chili, coriander, and cumin form a pungent mix and a base for the soup, called sofrito, while pickled onions go either on top of encebollado or into it, <strong>giving it its name that is literally translated to onioned.</strong></p></div>
       <div class="col-md-6"><img class="img-fluid rounded mx-auto d-block" width="400px "src="https://marcellos.com.ec/wp-content/uploads/2022/10/Encebollado_Mostaza-870x635.png"/></div>
     </div>
   
-     <div class="row mb-5">
+     <div class="row mb-5 his-2">
         <div class="col-md-6"><img class="img-fluid rounded mx-auto d-block" width="400" src="https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/J2DQ3S2I2NGNLLS2T6H7FLWKWE.jpg"/></div>
         <div class="col-md-6 text-right d-flex align-items-center"><p><strong>The soup originates from Ecuador's coast during the time when the fishers were out at sea and made the soup out of necessity.</strong> As they had some spices, and fresh fish was readily available, encebollado was created and became widely consumed throughout the country.</p></div>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-5 his-3">
       <div class="col-md-6 text-left d-flex align-items-center"><p>Today, consumers can choose their own condiments including toasted corn, banana chips, lime, mustard, and avocado. <strong>This traditional dish is a source of pride for the locals.</strong> It can be found on various street corners, in small restaurants, hotels, and homes of people from various social backgrounds.</p></div>
       <div class="col-md-6"><img class="img-fluid rounded mx-auto d-block" width="400" src="https://www.nanmagazine.com/wp-content/uploads/2019/07/el_jardin_01.jpg"/></div>
 
@@ -185,22 +185,6 @@
   padding: 0;
 }
 
-#navbarNavAltMarkup{
-  justify-content: center;
-}
-.navbar-toggler{
-  border-color: #ff0000;
-  border: 3px solid white;
-  z-index: 2;
-  background-color: transparent;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-}
-
-
 body{
     color: white;
     background-color: #343A40;
@@ -209,15 +193,58 @@ body{
 
 }
 
+#navbarNavAltMarkup{
+  justify-content: center;
+  margin-right: 100px;
+  
+}
+.navbar-toggler{
+  border-color: #ff0000;
+  border: 3px solid white;
+  z-index: 2;
+  background-color: transparent;
+}
+
+a.nav-link{
+  margin-right: 20px;
+  position: relative;
+}
+
+
+a.nav-link:hover{
+
+}
+
+a.nav-link:after,
+a.nav-link:before
+{
+  transition: all .5s;
+}
+
+a.nav-link:after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+  
+}
+
+a.nav-link:hover:after{
+  width: 100%;
+}
+
+
 p, li{
     font-size: 18px;
     font-weight: 300;
 }
 
-.nav-bar {
-  display: flex;
-  justify-content: center;
-}
 .navbar-brand{
     font-family: 'Fondamento';
 }
@@ -352,11 +379,13 @@ h3{
     justify-content: center;
     align-items: center;
     font-size: 40px;
+    font-weight: 600;
 }
 
 .history-container{
     max-width: 80%;
     margin: auto;
+    overflow: hidden;
 }
 
 .history-title{
@@ -365,6 +394,27 @@ border-bottom: 8px solid white;
 background-color: #343A40;
 color: white;
 
+}
+
+.his-1{
+animation: slideUp 1.4s ease;
+}
+
+.his-2{
+animation: slideUp 2.1s ease;
+}
+
+.his-3{
+animation: slideUp 2.4s ease;
+}
+
+@keyframes slideUp {
+  0%{
+    transform: translateY(250px);
+  }
+100%{
+  transform: translateY(0px);
+}
 }
 
 /* RECIPE SECTION -----------------------------------------------------------------*/
